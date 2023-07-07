@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>scanner</title>
+        <link rel="stylesheet" href="/css/nav-bar.css" />
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <div class="header">
+            <a href="/api/v1/" class="logo">DeepFake Detector</a>
+            <div class="header-right">
+                <a class="active" href="/api/v1/">Home</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+            </div>
+        </div>
+        <div class="text">
+            <h1>Scan & Detect Deepfake Videos</h1>
+        </div>
+        <div class="column is-4">
+            <div class="container">
+                <div class="card">
+                    <h3>Upload Video</h3>
+                    <div class="drop_box">
+                        <header>
+                            <h4 id="selectTxt">Select Video here</h4>
+                        </header>
+                        <p>Files Supported: mp4</p>
+                        <input
+                            type="file"
+                            hidden
+                            accept=".mp4"
+                            id="fileID"
+                            style="display: none"
+                        />
+                        <button
+                            class="btn"
+                            id="chooseVideoBtn"
+                            type="button"
+                            title="Choose Video"
+                        >
+                            Choose Video
+                        </button>
+                        <button
+                            class="btn"
+                            id="detectVideoBtn"
+                            type="button"
+                            style="display: none"
+                            title="Detect Video"
+                        >
+                            Detect Video
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/javascript/scanner.js"></script>
+    </body>
+</html>

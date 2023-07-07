@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeepFake</title>
+    <link rel="manifest" href="/assets/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <link
+      rel="stylesheet"
+      media="all"
+      href="/assets/application-4ab43543c409f5f472a71fc3ef831bbb64a0432e0ba0897b274b.css"
+      data-turbolinks-track="reload"
+    />
+    <script src="/assets/application-6b225a842dde2665d5ba81cf40b36186ff2b8e9b96fa6eaed6bb.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css"
+    />
+    <script defer src="https://kit.fontawesome.com/8e2c797f21.js"></script>
+    <style>
+      .notification {
+        position: absolute;
+        width: 100%;
+        margin: 0;
+      }
+    </style>
+    <link rel="manifest" href="/assets/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="/css/nav-bar.css">
+  </head>
+  <body>
+    <header>
+        <div class="header">
+            <a href="/api/v1/" class="logo">DeepFake Detector</a>
+            <div class="header-right">
+              <a class="active" href="/api/v1/">Home</a>
+              <a href="#contact">Contact</a>
+              <a href="#about">About</a>
+            </div>
+          </div>
+    </header>
+    <div class="has-screen-min-height">
+      <section class="hero is-info is-fullheight top-visual-wrapper">
+        <video
+          src="https://deepfakesweb.com/assets/bg-0778008a060abb86e5406c07782d03f12d9600c856027ad8a68784ca1d7c892f.mp4"
+          autoplay
+          muted
+          loop
+        ></video>
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <div class="column is-6 is-offset-3">
+              <h1 class="title is-size-1 is-spaced">Deepfake Detection</h1>
+              <h2 class="subtitle">Deepfake Video Detector using AI.</h2>
+              
+              <div class="has-text-centered">
+                <a class="button is-danger is-large" href="/api/v1/scanner"
+                  >Detect a Video</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        style="background: #fafafa; position: relative; padding-bottom: 2rem"
+      >
+        <section id="features" class="container inview">
+          <div class="columns features">
+            <div class="column is-6">
+              <div class="card is-shady">
+                <div class="card-image has-text-centered">
+                  <i class="fa fa-check-circle"></i>
+                </div>
+                <div class="card-content">
+                  <div class="content">
+                    <h4 class="has-text-centered">Our Software</h4>
+                    <p>
+                      Deepfake Detection App is online deepfake detector software that detects deepfake videos.
+                       All you need to do is upload videos and click a
+                      button, our app does the rest.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="card is-shady">
+                <div class="card-image has-text-centered">
+                  <i class="fa fa-key"></i>
+                </div>
+                <div class="card-content">
+                  <div class="content">
+                    <h4 class="has-text-centered">Private</h4>
+                    <p>
+                      Only you have access to your learning data, videos and
+                      images. We do not share information with any 3rd parties
+                      or publish your videos in any way.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="column is-4">
+              <div class="card is-shady">
+                <div class="card-image has-text-centered">
+                  <i class="fa fa-recycle"></i>
+                </div>
+                <div class="card-content">
+                  <div class="content">
+                    <h4 class="has-text-centered">Reuse model</h4>
+                    <p>
+                      You can reuse your trained model. This allows you to
+                      improve the face swapping quality of the results, or make
+                      additional videos without re-training a model.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </section>
+        <section class="container mt40">
+          <div class="has-text-centered">
+            <a class="button is-danger is-large" href="/api/v1/scanner"
+              >Detect a Video</a
+            >
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
