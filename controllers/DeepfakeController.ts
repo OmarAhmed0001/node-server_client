@@ -1,4 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
+import fs from 'fs';
+import path from 'path';
 import asyncHandler from 'express-async-handler';
 import axios from 'axios';
 import { uploadSingleVideo } from '../middlewares/uploadVideoMiddleware';
@@ -35,7 +37,8 @@ export const createdeepfake = asyncHandler(
                 DeepfakeVideo = req.fileName;
                 predict = Message;
                 frames_cropped = frame_list.map(
-                    (frame: string) => `${process.env.FLASK_URL}/frames/${frame}`
+                    (frame: string) =>
+                        `${process.env.FLASK_URL}/frames/${frame}`
                 );
                 faces_cropped = face_list.map(
                     (face: string) => `${process.env.FLASK_URL}/faces/${face}`
@@ -61,6 +64,36 @@ export const getPredict = (req: Request, res: Response, next: NextFunction) => {
             getPredict(req, res, next);
         }, 100);
     } else {
+        const folderPath = '../node-server_client/uploads/deepfakeVideos';
+        fs.readdir(
+            folderPath,
+            (err: NodeJS.ErrnoException | null, files: string[]) => {
+                if (err) {
+                    console.error('Error reading folder:', err);
+                    return;
+                }
+
+                // Iterate over the files
+                files.forEach((file: string) => {
+                    const filePath = path.join(folderPath, file);
+
+                    // Remove each file
+                    fs.unlink(
+                        filePath,
+                        (error: NodeJS.ErrnoException | null) => {
+                            if (error) {
+                                console.error('Error removing file:', error);
+                            } else {
+                                console.log(
+                                    'File removed successfully:',
+                                    filePath
+                                );
+                            }
+                        }
+                    );
+                });
+            }
+        );
         res.render('deepfake', {
             message: predict,
             preprocessed_images: frames_cropped,

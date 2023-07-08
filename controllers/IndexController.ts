@@ -15,7 +15,7 @@ export const getScanner = (req: Request, res: Response, next: NextFunction) => {
 //     res: Response,
 //     next: NextFunction
 // ) => {
-//     const folderPath = '../node-server_client/uploads/deepfake';
+//     const folderPath = '../node-server_client/uploads/deepfakeVideos';
 //     fs.readdir(
 //         folderPath,
 //         (err: NodeJS.ErrnoException | null, files: string[]) => {
