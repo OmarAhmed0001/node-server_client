@@ -12,7 +12,6 @@ import cors from 'cors';
 import { dbConnection } from './config/database';
 // Routes
 import DeepfakeRoute from './routes/deepfakeRoute';
-import UserRoute from './routes/userRoute';
 import indexRouter from './routes/indexRouter';
 // Error Handling
 import ApiError from './utils/apiError';
@@ -65,7 +64,6 @@ if (process.env.NODE_ENV === 'development') {
 // Mount Routs
 app.use('/api/v1/', indexRouter);
 app.use('/api/v1/deepfake', DeepfakeRoute);
-app.use('/api/v1/users', UserRoute);
 
 app.all('*', (req: express.Request, res: express.Response, next: Function) => {
     // create error and send it to error handling
